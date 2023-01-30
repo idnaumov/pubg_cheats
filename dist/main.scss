@@ -1599,6 +1599,8 @@ nav {
             font-weight: 400;
             color: rgba(46, 58, 89, 1);
 
+            resize: none;
+
             &::placeholder {
                color: rgba(46, 58, 89, 0.43);
             }
