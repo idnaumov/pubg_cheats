@@ -1,13 +1,5 @@
 $(document).ready( function() {
-
-   // NAVBAR BEFORE ACTIVE
-   $('.link').hover( 
-      function() {
-         $(this).addClass( 'active' );
-      }, function() {
-         $(this).removeClass( 'active' );
-   });
-
+   
    // BUTTON BLOCK (OS)
    $('.windows').click( 
       function( e ) {

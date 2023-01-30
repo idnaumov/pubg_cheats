@@ -67,26 +67,32 @@ nav {
          font-weight: 700;
          font-size: 17px;
          line-height: 21px;
+         padding-bottom: 10px;
+
+         transition: all .3s ease;
+         overflow: hidden;
 
          &:hover {
-            color: #EFEFEF;
-         }
-      }
+            color: #FF9B05;
 
-      .active::before {
-         text-align: center;
-         content: "";
-         width: 25px;
-         height: 3px;
-      
-         background: linear-gradient(98.89deg, #FF9B05 25.06%, #FF8F3F 88.94%);
-         border-radius: 5px;
-      
-         position: absolute;
-         top: 25px;
-         left: 0; 
-         right: 0;
-         margin: auto;
+            transition: all .3s ease;
+         }
+
+         &::after {
+            position:absolute;
+            display:block; content:'';
+            left:25%; right:25%; bottom:15%;
+            border-bottom:3px solid rgba($color: #FF9B05, $alpha: 0);
+            transition: all .2s linear;
+         }
+
+         &:hover::after {
+            position:absolute;
+            display:block; content:'';
+            left:25%; right:25%; bottom:0;
+            border-bottom:3px solid rgba($color: #FF9B05, $alpha: 255);
+            transition: all .2s linear;
+         }
       }
 
       @media (max-width: 1280px) {
@@ -402,7 +408,7 @@ nav {
 
          padding: 22px 33px;
 
-         background: #FFFFFF;
+         background-color: #FFFFFF;
          box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.03);
          border-radius: 5px;
 
@@ -416,8 +422,11 @@ nav {
 
          cursor: pointer;
 
+         transition: background-color .3s linear;
+
          &:hover {
-            background: #EFEFEF;
+            background-color: #EFEFEF;
+            transition: background-color .3s linear;
          }
 
          @media (max-width: 740px) {
@@ -986,6 +995,8 @@ nav {
          gap: 1rem;
 
          cursor: pointer;
+         transition: background-color .3s linear;
+
 
          @media (max-width: 740px) {
             padding: 13px 16px;
@@ -996,9 +1007,9 @@ nav {
          }
 
          &:hover {
-            background: #EFEFEF;
+            background-color: #EFEFEF;
+            transition: background-color .3s linear;
          }
-
          &.active {
             background: linear-gradient(82.58deg, #0AA6FE 37.16%, #05FFFF 163.86%);
             box-shadow: 0px 15px 25px rgba(0, 163, 255, 0.3);
@@ -1382,7 +1393,7 @@ nav {
 
          &.active {
             height: fit-content;
-            transition: height .3s ease;
+            transition: all .3s ease;
          }
 
          .open__close {
@@ -1603,6 +1614,11 @@ nav {
 
             &::placeholder {
                color: rgba(46, 58, 89, 0.43);
+            }
+
+            &:focus {
+               outline: none !important;
+               border-bottom: 1px #FF9B05 solid;
             }
          }
 
